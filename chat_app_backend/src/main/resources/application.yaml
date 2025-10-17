@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: chat_app_backend
+  data:
+    mongodb:
+      uri: mongodb://root:123456@localhost:27017/chat_app_db
