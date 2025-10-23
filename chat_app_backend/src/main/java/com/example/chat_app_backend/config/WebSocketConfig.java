@@ -27,7 +27,7 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     public void registerStompEndpoints(StompEndpointRegistry registry) {
 
         registry.addEndpoint("/chat") // dinh nghia endpoint cho ket noi WebSocket
-                .setAllowedOrigins("*") // cho phep ket noi tu bat ky nguon goc nao
+                .setAllowedOrigins("http://localhost:5173") // cho phep ket noi tu bat ky nguon goc nao
                 .withSockJS(); // su dung SockJS de ho tro trinh duyet khong ho tro WebSocket
 
 

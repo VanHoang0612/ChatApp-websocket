@@ -16,11 +16,11 @@ import java.time.LocalDateTime;
 
 @Controller
 @RequiredArgsConstructor
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = {"http://localhost:5173"})
 
 public class ChatController {
 
-    private RoomRepository roomRepository;
+    private final RoomRepository roomRepository;
 
 
     @MessageMapping("/sendMessage/{roomId}") // client send message to /app/sendMessage/{roomId}
@@ -30,7 +30,7 @@ public class ChatController {
             @RequestBody MessageRequest request
     ) {
 
-        Room room = roomRepository.findById(request.getRoomId()).orElse(null);
+        Room room = roomRepository.findByRoomId(request.getRoomId()).orElse(null);
 
         if(room != null) {
             Message message = new Message();
